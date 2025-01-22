@@ -3,9 +3,8 @@ import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import Image from 'next/image';
-import showPasswordIcon from '../icons/show-password.svg';
-import hidePasswordIcon from '../icons/hide-password.svg';
+import HidePasswordIcon from '../icons/HidePasswordIcon';
+import ShowPasswordIcon from '../icons/ShowPasswordIcon';
 
 interface FormInputs {
   email: string;
@@ -76,6 +75,12 @@ const AuthForm: React.FC = () => {
     else return '#FF8080';
   };
 
+  const getPasswordIconColor = () => {
+    if (!touchedFields.password && !isFieldValid('password')) return '#7C8696';
+    if (isFieldValid('password')) return '#27B274';
+    else return '#FF8080';
+  };
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -113,11 +118,11 @@ const AuthForm: React.FC = () => {
             onClick={togglePasswordVisibility}
             className="absolute -translate-y-1/2 right-5 top-1/2"
           >
-            <Image
-              src={showPassword ? showPasswordIcon : hidePasswordIcon}
-              alt="toggle password visibility"
-              className="w-5 h-5"
-            />
+            {showPassword ? (
+              <ShowPasswordIcon color={getPasswordIconColor()} />
+            ) : (
+              <HidePasswordIcon color={getPasswordIconColor()} />
+            )}
           </button>
         </div>
 
