@@ -2,6 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Used technologies
 
+```bash
 "next": "15.1.6",
 "react": "^19.0.0",
 "react-dom": "^19.0.0",
@@ -9,6 +10,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 "yup": "^1.6.1",
 "tailwindcss": "^3.4.1",
 "typescript": "^5"
+```
 
 ## Getting Started
 
