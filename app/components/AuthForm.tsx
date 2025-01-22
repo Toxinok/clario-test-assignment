@@ -70,6 +70,12 @@ const AuthForm: React.FC = () => {
     }
     `;
 
+  const getPasswordRulesColor = (isValid: boolean) => {
+    if (!touchedFields.password && !isValid) return '#4A4E71';
+    if (isValid) return '#27B274';
+    else return '#FF8080';
+  };
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -118,23 +124,23 @@ const AuthForm: React.FC = () => {
         {/* Validation Rules */}
         <div className="mt-2 ml-5 space-y-1">
           <p
-            className={`text-xs ${
-              validateRules.length ? 'text-[#27B274]' : 'text-[#FF8080]'
-            }`}
+            className={`text-xs text-[${getPasswordRulesColor(
+              validateRules.length
+            )}]`}
           >
             8 characters or more (no spaces)
           </p>
           <p
-            className={`text-xs ${
-              validateRules.uppercase ? 'text-[#27B274]' : 'text-[#FF8080]'
-            }`}
+            className={`text-xs text-[${getPasswordRulesColor(
+              validateRules.uppercase
+            )}]`}
           >
             Uppercase and lowercase letters
           </p>
           <p
-            className={`text-xs ${
-              validateRules.digit ? 'text-[#27B274]' : 'text-[#FF8080]'
-            }`}
+            className={`text-xs text-[${getPasswordRulesColor(
+              validateRules.digit
+            )}]`}
           >
             At least one digit
           </p>
