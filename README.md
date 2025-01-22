@@ -1,5 +1,15 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Used technologies
+
+"next": "15.1.6",
+"react": "^19.0.0",
+"react-dom": "^19.0.0",
+"react-hook-form": "^7.54.2",
+"yup": "^1.6.1",
+"tailwindcss": "^3.4.1",
+"typescript": "^5"
+
 ## Getting Started
 
 First, run the development server:
